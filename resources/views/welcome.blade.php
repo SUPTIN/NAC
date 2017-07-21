@@ -21,6 +21,11 @@
                 margin: 0;
             }
 
+            .content img {
+                width:  100px;
+                height: 100px;
+            }
+
             .full-height {
                 height: 100vh;
             }
@@ -47,6 +52,10 @@
 
             .title {
                 font-size: 84px;
+            }
+
+            .subtitle {
+                font-size: 20px;
             }
 
             .links > a {
@@ -77,6 +86,7 @@
                 </div>
             @endif
 
+
             <div class="content">
                 <div class="title m-b-md">
                     NAC
@@ -84,8 +94,7 @@
                 <div>
                     Núcleo de Atendimento ao Contribuinte 
                 </div>
-
-                <div class="panel-body">
+                <div class="panel-body" border="1">
                     <div class="row">
                       <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
@@ -99,17 +108,17 @@
                       </div>
 
                     </div>
-                    <div class="row">
-                     <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                          <a href="{{url('#')}}">
+                     <div class="row">
+                        <div class="col-sm-6 col-md-4">
+                          <div class="thumbnail">
+                           <a href="{{url('#')}}">
                             <img src="icones/Info-icon.png" alt="Informação de Sistema"/>
                             <div class="caption">
                               <h3>Informações do Sistema</h3>
                             </div>
-                        </a>
-                       </div>
-                      </div>
+                           </a>
+                          </div>
+                        </div>
 
                     </div>
                </div>
