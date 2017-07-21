@@ -79,17 +79,41 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    NAC -  
+                    NAC
+                </div>
+                <div>
+                    Núcleo de Atendimento ao Contribuinte 
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                          <a href="{{url('#')}}">
+                            <img src="icones/FPR-icon.png" alt="Ficha Produtor Rural"/>
+                            <div class="caption">
+                              <h3>Ficha Produtor Rural</h3>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
+
+                    </div>
+                    <div class="row">
+                     <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                          <a href="{{url('#')}}">
+                            <img src="icones/Info-icon.png" alt="Informação de Sistema"/>
+                            <div class="caption">
+                              <h3>Informações do Sistema</h3>
+                            </div>
+                        </a>
+                       </div>
+                      </div>
+
+                    </div>
+               </div>
             </div>
-        </div>
+         </div>
     </body>
 </html>
