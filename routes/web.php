@@ -12,7 +12,7 @@
 */
 
 Route::group(['prefix','FPR_'], function(){
-	Route::get('fichas','FPR_\fprController@index');
+	Route::get('fichaProdRural','FPR_\fprController@index');
 });
 
 Route::get('/', function () {
