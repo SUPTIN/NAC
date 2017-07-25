@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Ferramentas</div>
+                <div class="panel-heading">Ferramentas | Funcionário: 
+                </div>
 
                 <div class="panel-body">
                     <div class="row">
@@ -13,10 +14,10 @@
 
                       <div class="col-sm-6 col-md-4">
                         <div class="thumbnail">
-                          <a href="{{url('Posts')}}">
+                          <a href="{{url('fichaProdRural')}}">
                             <img src="icones/FPR-icon.png" alt="icone de usuário"/>
                             <div class="caption">
-                              <h5>Ficha Produtor Rural</h5>
+                              <h4>Ficha Produtor Rural</h4>
                             </div>
                         </a>
                        </div>
