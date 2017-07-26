@@ -11,9 +11,11 @@
 |
 */
 
-Route::group(['prefix','FPR_'], function(){
-	Route::get('fichaProdRural','FPR_\fprController@index');
-});
+/*Route::group(['prefix','FPR'], function(){
+	Route::get('fichaProdRural','FPR\fprController@index');
+});*/
+
+Route::get('fichaProdRural', 'HomeController@viewFichaPR');
 
 Route::get('/', function () {
     return view('welcome');
