@@ -13,7 +13,7 @@ class FichaProdutorRuralTable extends Migration
      */
     public function up()
     {
-        Schema::create('fichaProdutorRural', function (Blueprint $table) {
+        Schema::create('ficha_p_rs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('contribuintes')->index();
             $table->string('cond');
@@ -39,6 +39,6 @@ class FichaProdutorRuralTable extends Migration
      */
     public function down()
     {
-        Schema::drop('fichaProdutorRural');
+        Schema::drop('ficha_p_rs');
     }
 }

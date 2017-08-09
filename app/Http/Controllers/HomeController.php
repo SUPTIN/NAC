@@ -11,7 +11,8 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    public function __construct(){
+    public function __construct(fichaPR $fichaPR){
+    	$this->fichaPR =$fichaPR;
     	//
     }
     public function listaFuncionario(){
@@ -19,7 +20,8 @@ class HomeController extends Controller
 
     }
     public function viewFichaPR(){
-    	return view('fichaProduRural');
-
+    	$fichas = $this->fichaPR->all();
+    	return view('fichaProduRural', compact('fichas'));
     }
+
 }
