@@ -3,10 +3,6 @@
 <div class="container">
 	<div class="actions">
 		<div class="container">
-			<a class="add" href="forms">
-				<i class="fa fa-plus-circle"></i>
-			</a>
-
 			<form class="form-search form form-inline">
 				<input type="text" name="pesquisar" placeholder="Pesquisar?" class="form-control">
 				<input type="submit" name="pesquisar" value="Encontrar" class="btn btn-success">
@@ -17,7 +13,10 @@
 	<div class="clear"></div>
 
 	<h1 class="title"> 
-		Listagem dos Produtores
+		Listagem dos Produtores 
+		<a class="add" href="forms">
+		    <i class="fa fa-plus-circle"></i>
+		</a>
 	</h1>
 
 	<table class="table table-hover">
