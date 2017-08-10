@@ -21,12 +21,13 @@ class FichaProdutorRuralTable extends Migration
             $table->string('area');
             $table->string('inscEstadual');
             $table->string('cpf');
-            $table->string('endereco');
+            $table->longtext('endereco');
             $table->string('incra');
             $table->string('vencContrato');
             $table->string('nirf');
             $table->string('telefone');
-            $table->string('pontoRef');
+            $table->longtext('pontoRef');
+            $table->longtext('entrega');
             $table->string('ultFuncFazerMudanca');
             $table->timestamps();
         });
