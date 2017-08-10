@@ -16,6 +16,7 @@
 });*/
 
 Route::get('fichaProdRural', 'HomeController@viewFichaPR');
+Route::get('formAddFichaPR', 'HomeController@viewFormFichaPR');
 
 Route::get('/', function () {
     return view('welcome');

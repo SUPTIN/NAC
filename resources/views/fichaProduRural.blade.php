@@ -14,7 +14,7 @@
 
 	<h1 class="title"> 
 		Listagem dos Produtores 
-		<a class="add" href="forms">
+		<a class="add" href="formAddFichaPR">
 		    <i class="fa fa-plus-circle"></i>
 		</a>
 	</h1>

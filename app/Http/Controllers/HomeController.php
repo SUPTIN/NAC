@@ -23,5 +23,9 @@ class HomeController extends Controller
     	$fichas = $this->fichaPR->all();
     	return view('fichaProduRural', compact('fichas'));
     }
+    public function viewFormFichaPR(){
+    	$fichas = $this->fichaPR->all();
+    	return view('formAddFichaPR');
+    }
 
 }
