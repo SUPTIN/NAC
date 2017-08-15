@@ -14,18 +14,21 @@
       </div>
       <div class="form-group col-md-4" >
         <label >Cond: </label>
-        <input class="form-control"  name="cond" value="{{old('cond')}}"/>
-      </div>
-    </div>
-
-    <div class="row">
-	  <div class="form-group col-md-8" >
-        <label >Culturas: </label>
-        <input class="form-control"  name="culturas" value="{{old('culturas')}}"/>
-      </div>
-      <div class="form-group col-md-4">
-        <label >Área: </label>
-        <input class="form-control"  name="area" value="{{old('area')}}"/>
+        <select class="form-control"  name="cond" value="{{old('cond')}}">
+           <option value="0"></option>
+           <option value="1">Proprietário</option>
+           <option value="2">Condômino</option>
+           <option value="3">Arrendatário</option>
+           <option value="4">Usufrutuário</option>
+           <option value="5">Parceiro</option>
+           <option value="6">Comodatário</option>
+           <option value="7">Pescador</option>
+           <option value="8">Posseiro</option>
+           <option value="9">NV Proprietário</option>
+           <option value="10">Mutuário</option>
+           <option value="11">Quilombola</option>
+           <option value="12">Co-proprietário</option>
+        </select>
       </div>
     </div>
 
@@ -68,7 +71,10 @@
       <label >Ponto Ref.: </label>
       <input class="form-control"  name="pontoReferencia" value="{{old('pontoReferencia')}}"/>
     </div>
-
+    <div class="form-group" >
+      <label >Notas Entregue: </label>
+      <input class="form-control"  name="notasEntregue" value="{{old('notasEntregue')}}"/>
+    </div>
 </div>
 
 
