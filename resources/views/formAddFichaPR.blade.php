@@ -75,10 +75,46 @@
       <label >Notas Entregue: </label>
       <input class="form-control"  name="notasEntregue" value="{{old('notasEntregue')}}"/>
     </div>
-</div>
+ 
+    <div class="form-group">
+       <label >Referências das notas: </label>
+      <table id="products-table" class="table table-hover table-bordered">
+        <tbody>
+        <tr>
+           <th>Data</th>
+           <th>Numeração</th>
+           <th>Quant.</th>
+           <th>Aut. Nº</th>
+           <th class="actions">Ação</th>
+        </tr>
+        <tr>
+         <td>
+           <div class="form-group ">
+             <input class="form-control" size="16" type="text" name="date" id="date" placeholder="dd/mm/yyyy" value="{{old('date')}}"/>
+           </div>
+         </td>
+         <td>
+           <input class="form-control"  name="numercao" value="{{old('numeracao')}}"/>
+         </td>
+         <td>
+           <input class="form-control"  name="quantidade" value="{{old('quantidade')}}"/>
+         </td>
+         <td>
+           <input class="form-control"  name="autN" value="{{old('autN')}}"/>
+         </td>
+         <td class="actions"> <button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+          <td colspan="6">
+            <button class="btn btn-small btn-success" onclick="AddTableRow(this)" type="button">Adicionar</button>
+            </td>
+        </tr>
+        </tfoot>
+      </table>
 
-
-
+    </div>
 
 </div>
 @endsection

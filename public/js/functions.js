@@ -15,11 +15,10 @@
       var newRow = $("<tr>");
       var cols = "";
       
-      cols += '<td><input type="text" name="id"></td>';
-      cols += '<td><input type="text" name="nome"></td>';
-      cols += '<td><select name="cargo"><option value="gerente" name="gerente">Gerente</option><option value="Professor" name="Professor">Professor</option><option value="Programador" name="Programador">Programador</option></select></td>';
-      cols += '<td><input type="text" name="email"></td>';
-      cols += '<td><input type="text" name="cpf"></td>';
+      cols += '<td><div class="form-group"><input class="form-control" size="16" type="text" name="date" id="date" placeholder="dd/mm/yyyy"></div></td>';
+      cols += '<td><input class="form-control" type="text" name="numercao"></td>';
+      cols += '<td><input class="form-control" type="text" name="quantidade"></td>';
+      cols += '<td><input class="form-control" type="text" name="autN"></td>';
       
       cols += '<td class="actions">';
       cols += '<button class="btn btn-large btn-danger" onclick="RemoveTableRow(this)" type="button">Remover</button>';
