@@ -5,8 +5,8 @@
 	<h1 class="title"> 
 		Nova Ficha Produtor Rural
 	</h1>
-    
-    <!-- Tem que habilitar <input type="hidden" name="_token" value="{{ csrf_token() }}" /> -->
+    <form method="post" action="addFichaPR">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     <div class="row">
 	  <div class="form-group col-md-8" >
         <label >Contribuinte: </label>
@@ -113,8 +113,8 @@
         </tr>
         </tfoot>
       </table>
-
     </div>
-
+    <button class="btn btn-primary">Cadastrar</button>
+  </form>
 </div>
 @endsection

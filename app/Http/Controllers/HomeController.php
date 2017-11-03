@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    private $fichaPR;
+
     public function __construct(fichaPR $fichaPR){
     	$this->fichaPR =$fichaPR;
     	//
@@ -24,8 +26,13 @@ class HomeController extends Controller
     	return view('fichaProduRural', compact('fichas'));
     }
     public function viewFormFichaPR(){
-    	$fichas = $this->fichaPR->all();
+    	//$fichas = $this->fichaPR->all();
     	return view('formAddFichaPR');
+    }
+    public function addFicha(){
+        
+
+        return "cadastrado com sucesso!";
     }
 
 }
