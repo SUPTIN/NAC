@@ -29,8 +29,11 @@ class HomeController extends Controller
     	//$fichas = $this->fichaPR->all();
     	return view('formAddFichaPR');
     }
-    public function addFicha(){
+    public function addFicha(Request $request){
         
+        //dd($request->all());
+        $dados = $request->except('_token');
+        $insert= $this->fichaPR->create($dados);
 
         return "cadastrado com sucesso!";
     }

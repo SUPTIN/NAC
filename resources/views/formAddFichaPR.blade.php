@@ -76,7 +76,7 @@
       <input class="form-control"  name="notasEntregue" value="{{old('notasEntregue')}}"/>
     </div>
  
-    <div class="form-group">
+    <!-- <div class="form-group">
        <label >Referências das notas: </label>
       <table id="products-table" class="table table-hover table-bordered">
         <tbody>
@@ -113,7 +113,7 @@
         </tr>
         </tfoot>
       </table>
-    </div>
+    </div> -->
     <button class="btn btn-primary">Cadastrar</button>
   </form>
 </div>
