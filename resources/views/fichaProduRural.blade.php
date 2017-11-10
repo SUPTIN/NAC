@@ -28,8 +28,11 @@
 	  @forelse($fichas as $fichaPR)
 	    <tr>
 	  	  <td>{{$fichaPR->inscEstadual}}</td>
-	  	  <td>{{$fichaPR->contribuintes}}</td>
+	  	  <td>{{$fichaPR->contribuinte}}</td>
 	  	  <td>
+	  	  	<a href="{{url("$fichaPR->id/view")}}" class="view">
+	  			<i class="fa fa-eye"></i>
+	  		</a>
 	  		<a href="{{url("$fichaPR->id/edit")}}" class="edit">
 	  			<i class="fa fa-pencil-square-o"></i>
 	  		</a>
@@ -46,6 +49,7 @@
 	    </tr>
 	  @endforelse
 	</table>
+	<div align="center">{!! $fichas->links() !!}</div>
 
 </div>
 @endsection

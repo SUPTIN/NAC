@@ -12,9 +12,11 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     private $fichaPR;
+    private $totalPage = 5;
 
     public function __construct(fichaPR $fichaPR){
     	$this->fichaPR =$fichaPR;
+
     	//
     }
     public function listaFuncionario(){
@@ -22,20 +24,29 @@ class HomeController extends Controller
 
     }
     public function viewFichaPR(){
-    	$fichas = $this->fichaPR->all();
+    	$fichas = $this->fichaPR->paginate($this->totalPage);
     	return view('fichaProduRural', compact('fichas'));
     }
     public function viewFormFichaPR(){
     	//$fichas = $this->fichaPR->all();
     	return view('formAddFichaPR');
     }
+    public function viewCadFichaPR(Request $dados){
+        return 'to nulicar certo';
+
+    }
+
     public function addFicha(Request $request){
         
         //dd($request->all());
         $dados = $request->except('_token');
         $insert= $this->fichaPR->create($dados);
 
-        return "cadastrado com sucesso!";
+        if ($insert)
+            return redirect('vieCadFichaPR', compact('dados'));
+        else
+            return redirect()->back();
+        return ;
     }
 
 }
