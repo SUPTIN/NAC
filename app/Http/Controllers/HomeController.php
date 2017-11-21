@@ -17,7 +17,6 @@ class HomeController extends Controller
     public function __construct(fichaPR $fichaPR){
     	$this->fichaPR =$fichaPR;
 
-    	//
     }
     public function listaFuncionario(){
     	return"funcionarios";
@@ -27,13 +26,46 @@ class HomeController extends Controller
     	$fichas = $this->fichaPR->paginate($this->totalPage);
     	return view('fichaProduRural', compact('fichas'));
     }
+
     public function viewFormFichaPR(){
     	//$fichas = $this->fichaPR->all();
     	return view('formAddFichaPR');
     }
-    public function viewCadFichaPR(Request $dados){
-        return 'to nulicar certo';
 
+    public function cadFichaPR($id){
+        //$id = $request->id;
+        //dd($id);
+        $dados = FichaPR::find($id);
+        $nCond = $dados->cond;
+        switch($nCond){
+           case 1: $textoCond = "Proprietário";
+                    break;
+           case 2: $textoCond = "Condômino";
+                    break;
+           case 3: $textoCond = "Arrendatário";
+                    break;
+           case 4: $textoCond = "Usufrutuário";
+                    break;
+           case 5: $textoCond = "Parceiro";
+                    break;
+           case 6: $textoCond = "Comodatário";
+                    break;
+           case 7: $textoCond = "Pescador";
+                    break;
+           case 8: $textoCond = "Posseiro";
+                    break;
+           case 9: $textoCond = "NV Proprietário";
+                    break;
+           case 10: $textoCond = "Mutuário";
+                    break;
+           case 11: $textoCond = "Quilombola";
+                    break;
+           case 12: $textoCond = "Co-proprietário";
+                    break;
+        }
+        $dados["textoCond"] = $textoCond;
+        #return view('fichaPRCadSucesso')->with('id',$id);
+        return view ('fichaPRCadSucesso', array('dados' => $dados));
     }
 
     public function addFicha(Request $request){
@@ -41,12 +73,21 @@ class HomeController extends Controller
         //dd($request->all());
         $dados = $request->except('_token');
         $insert= $this->fichaPR->create($dados);
+        $id = $insert->id;
 
         if ($insert)
-            return redirect('vieCadFichaPR', compact('dados'));
+            return HomeController::cadFichaPR($id);
+            //return redirect('viewCadFichaPR')->withId($id);
         else
             return redirect()->back();
-        return ;
+        
+    }
+
+    public function buscaFichaPR(Request $request){
+        $dados = $request->except('_token');
+        $inscricao = $request->input('pesquisar');
+        $dados = FichaPR::find( $inscricao );
+        return $dados;
     }
 
 }
