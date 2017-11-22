@@ -37,9 +37,6 @@
 	  		<a href="{{url("$fichaPR->id/edit")}}" class="edit">
 	  			<i class="fa fa-pencil-square-o"></i>
 	  		</a>
-	  		<a href="{{url("$fichaPR->id/delete")}}" class="delete">
-	  			<i class="fa fa-trash"></i>
-	  		</a>
 	  	  </td>
 	    </tr>
 	  @empty

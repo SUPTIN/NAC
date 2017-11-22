@@ -86,7 +86,10 @@ class HomeController extends Controller
     public function buscaFichaPR(Request $request){
         $dados = $request->except('_token');
         $inscricao = $request->input('pesquisar');
-        $dados = FichaPR::find( $inscricao );
+        $dados = FichaPR::where(function($query) use($inscricao){
+            if($inscricao)
+                $query->where('inscEstadual', '=', $inscricao);
+        })->paginate(5);
         return $dados;
     }
 
