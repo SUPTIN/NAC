@@ -15,7 +15,7 @@ class FichaProdutorRuralTable extends Migration
     {
         Schema::create('ficha_p_rs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ativo');
+            $table->string('ativo')->default('não');
             $table->string('contribuinte')->index();
             $table->string('cond');
             $table->string('inscEstadual');
@@ -27,7 +27,7 @@ class FichaProdutorRuralTable extends Migration
             $table->string('telefone');
             $table->longtext('pontoReferencia');
             $table->longtext('notasEntregue');
-            $table->string('ultFuncFazerMudanca');
+            $table->string('ultFuncFazerMudanca')->default('sem_funcionario');
             $table->timestamps();
         });
     }

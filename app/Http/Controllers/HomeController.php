@@ -75,6 +75,7 @@ class HomeController extends Controller
         $insert= $this->fichaPR->create($dados);
         $id = $insert->id;
 
+
         if ($insert)
             return HomeController::cadFichaPR($id);
             //return redirect('viewCadFichaPR')->withId($id);
