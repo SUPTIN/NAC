@@ -15,19 +15,18 @@ class FichaProdutorRuralTable extends Migration
     {
         Schema::create('ficha_p_rs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('contribuintes')->index();
+            $table->string('ativo');
+            $table->string('contribuinte')->index();
             $table->string('cond');
-            $table->string('culturas');
-            $table->string('area');
             $table->string('inscEstadual');
             $table->string('cpf');
             $table->longtext('endereco');
-            $table->string('incra');
+            $table->string('nIncra');
             $table->string('vencContrato');
             $table->string('nirf');
             $table->string('telefone');
-            $table->longtext('pontoRef');
-            $table->longtext('entrega');
+            $table->longtext('pontoReferencia');
+            $table->longtext('notasEntregue');
             $table->string('ultFuncFazerMudanca');
             $table->timestamps();
         });

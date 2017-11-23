@@ -8,6 +8,14 @@
     <form method="post" action="addFichaPR">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     <div class="row">
+       <div class="form-group col-md-6" >
+        <label class="form-check-inline">
+          <input  class="form-check-input" name="ativo" value="sim" type="checkbox" checked="checked" value="{{old('ativo')}}"/> 
+          Ativo
+        </label>
+      </div>
+    </div>
+    <div class="row">
 	  <div class="form-group col-md-8" >
         <label >Contribuinte: </label>
         <input class="form-control"  name="contribuinte" value="{{old('contribuinte')}}"/>

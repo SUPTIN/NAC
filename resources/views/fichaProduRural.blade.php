@@ -22,14 +22,22 @@
 
 	<table class="table table-hover">
 	  <tr>
-	  	<th>Inscrição</th>
+	  	<th width="200px">Inscrição</th>
 	  	<th>Produtor</th>
-	  	<th width="100px">Ações</th>
+	  	<th width="80px">Ativo?</th>
+	  	<th width="80px">Ações</th>
 	  </tr>
 	  @forelse($fichas as $fichaPR)
 	    <tr>
 	  	  <td>{{$fichaPR->inscEstadual}}</td>
 	  	  <td>{{$fichaPR->contribuinte}}</td>
+	  	  <td align="center"> 
+	  	  	  @if ($fichaPR->ativo == 'sim')   
+	  	  	     <i class="fa fa-thumbs-up" arian-hidden="true" style="color:green"></i>
+	  	  	  @else  
+	  	  	     <i class="fa fa-thumbs-down" arian-hidden="true" style="color:red"></i>            
+	  	  	  @endif
+	  	  </td>
 	  	  <td>
 	  	  	<a href="{{url("$fichaPR->id/view")}}" class="view">
 	  			<i class="fa fa-eye"></i>

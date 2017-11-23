@@ -3,7 +3,12 @@
 <div class="container">
 	<h1 class="title"> 
 		Produtor Rural cadastrado com sucesso
-	</h1>
+	</h1> 
+    <div class="row">
+        <div class="form-group col-md-8" >
+            <label >Ativo:  </label>{{$dados->ativo}}
+        </div>
+    </div>
     <div class="row">
 	  <div class="form-group col-md-8" >
         <label >Contribuinte: </label>{{$dados->contribuinte}}
