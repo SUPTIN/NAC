@@ -17,6 +17,7 @@
 
 Route::get('fichaProdRural', 'HomeController@viewFichaPR');
 Route::get('formAddFichaPR', 'HomeController@viewFormFichaPR');
+Route::get('{id}/view', 'HomeController@viewDetalhes');
 Route::post('addFichaPR','HomeController@addFicha');
 Route::post('pesquisando','HomeController@buscaFichaPR');
 //Route::get('fichaPRCadSucesso/{id}', 'HomeController@cadFichaPR');
