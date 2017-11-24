@@ -4,8 +4,8 @@
 	<div class="actions">
 		<div class="container">
 			<form class="form-search form form-inline" method="post" action="pesquisando">
-				<input type="text" name="pesquisar" placeholder="Pesquisar?" class="form-control">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}" />
+				<input type="text" name="pesquisar" placeholder="Pesquisar?" class="form-control">
 				<input type="submit" name="bpesquisar" value="Encontrar" class="btn btn-success">
 			</form>
 		</div>
