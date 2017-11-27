@@ -8,9 +8,9 @@
         <div class="form-group col-md-8" >
             <label >Ativo:  </label>
             @if ($dados->ativo == 'sim')   
-               <i class="fa fa-thumbs-up" arian-hidden="true" style="color:green"></i>
+               <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i>
             @else  
-               <i class="fa fa-thumbs-down" arian-hidden="true" style="color:red"></i>            
+               <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i>            
             @endif
         </div>
     </div>

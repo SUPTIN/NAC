@@ -15,8 +15,8 @@
 
 	<h1 class="title"> 
 		Listagem dos Produtores 
-		<a class="add" href="formAddFichaPR">
-		    <i class="fa fa-plus-circle"></i>
+		<a class="add" href="formAddFichaPR" >
+		    <i class="fa fa-plus-circle" aria-hidden="true" title="Adicionar nova Ficha"></i>
 		</a>
 	</h1>
 
@@ -33,17 +33,17 @@
 	  	  <td>{{$fichaPR->contribuinte}}</td>
 	  	  <td align="center"> 
 	  	  	  @if ($fichaPR->ativo == 'sim')   
-	  	  	     <i class="fa fa-thumbs-up" arian-hidden="true" style="color:green"></i>
+	  	  	     <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i>
 	  	  	  @else  
-	  	  	     <i class="fa fa-thumbs-down" arian-hidden="true" style="color:red"></i>            
+	  	  	     <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i>            
 	  	  	  @endif
 	  	  </td>
 	  	  <td>
 	  	  	<a href="{{url("$fichaPR->id/view")}}" class="view">
-	  			<i class="fa fa-eye"></i>
+	  			<i class="fa fa-eye" title="Visualiza a Ficha"></i>
 	  		</a>
 	  		<a href="{{url("$fichaPR->id/edit")}}" class="edit">
-	  			<i class="fa fa-pencil-square-o"></i>
+	  			<i class="fa fa-pencil-square-o" title="Edita a Ficha"></i>
 	  		</a>
 	  	  </td>
 	    </tr>
