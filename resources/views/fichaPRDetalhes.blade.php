@@ -4,6 +4,13 @@
 	<h1 class="title"> 
 		Detalhes Ficha Produtor Rural
 	</h1> 
+  @if ($dados ==  'Não foi localizado Inscrição!')
+    <div class="row">
+      <div class="form-group col-md-8" >
+        <label size="16"> Não foi localizado Inscrição! </label>
+      </div>
+    </div>
+  @else
     <div class="row">
         <div class="form-group col-md-8" >
             <label >Ativo:  </label>
@@ -98,7 +105,7 @@
       </table>
     </div> -->
 
-  </form>
+  @endif
 
 
 

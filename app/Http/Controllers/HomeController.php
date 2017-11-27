@@ -92,36 +92,41 @@ class HomeController extends Controller
             if($inscricao)
                 $query->where('inscEstadual', '=', $inscricao);
         })->get();
-        $nCond = $dados[0]->cond;
-        switch($nCond){
-           case 1: $textoCond = "Proprietário";
+        if (empty($dados[0])){
+            $dados["id"] = "Não foi localizado Inscrição!";
+            return view ('fichaPRDetalhes')->with('dados',$dados["id"]);;
+        }    
+        else {    
+            $nCond = $dados[0]->cond;
+            switch($nCond){
+                case 1: $textoCond = "Proprietário";
                     break;
-           case 2: $textoCond = "Condômino";
+                case 2: $textoCond = "Condômino";
                     break;
-           case 3: $textoCond = "Arrendatário";
+                case 3: $textoCond = "Arrendatário";
                     break;
-           case 4: $textoCond = "Usufrutuário";
+                case 4: $textoCond = "Usufrutuário";
                     break;
-           case 5: $textoCond = "Parceiro";
+                case 5: $textoCond = "Parceiro";
                     break;
-           case 6: $textoCond = "Comodatário";
+                case 6: $textoCond = "Comodatário";
                     break;
-           case 7: $textoCond = "Pescador";
+                case 7: $textoCond = "Pescador";
                     break;
-           case 8: $textoCond = "Posseiro";
+                case 8: $textoCond = "Posseiro";
                     break;
-           case 9: $textoCond = "NV Proprietário";
+                case 9: $textoCond = "NV Proprietário";
                     break;
-           case 10: $textoCond = "Mutuário";
+                case 10: $textoCond = "Mutuário";
                     break;
-           case 11: $textoCond = "Quilombola";
+                case 11: $textoCond = "Quilombola";
                     break;
-           case 12: $textoCond = "Co-proprietário";
+                case 12: $textoCond = "Co-proprietário";
                     break;
-        }
-        $dados[0]["textoCond"] = $textoCond;
-
-        return view ('fichaPRDetalhes')->with('dados',$dados[0]);
+            }
+            $dados[0]["textoCond"] = $textoCond;
+            return view ('fichaPRDetalhes')->with('dados',$dados[0]);
+       }
         
     }
 
