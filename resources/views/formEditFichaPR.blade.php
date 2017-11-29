@@ -1,19 +1,16 @@
 @extends('layout.app')
 @section('content')
 <div class="container">
+
 	<h1 class="title"> 
-		Detalhes Ficha Produtor Rural 
+		Nova Ficha Produtor Rural
     <a class="add" href="{{ URL::previous() }}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
-	</h1> 
-  @if ($dados ==  'Não foi localizado Inscrição!')
-    <div class="row">
-      <div class="form-group col-md-8" >
-        <label size="16"> Não foi localizado Inscrição! </label>
-      </div>
-    </div>
-  @else
+	</h1>
+    <form method="post" action="updateFichaPR">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+    <input type="hidden" name="id" value="{{ $dados->id }}" />
     <div class="row">
         <div class="form-group col-md-8" >
             <label >Ativo:  </label>
@@ -26,47 +23,70 @@
     </div>
     <div class="row">
 	  <div class="form-group col-md-8" >
-        <label >Contribuinte: </label>{{$dados->contribuinte}}
+        <label >Contribuinte: </label>
+        <input class="form-control"  name="contribuinte" value="{{$dados->contribuinte}}"/>
       </div>
       <div class="form-group col-md-4" >
-        <label >Cond: </label> {{$dados->textoCond}}
-        <input type="hidden" name="nCond" value="{{$dados->cond}}" />
+        <label >Cond: </label>
+        <select class="form-control"  name="cond">
+           <option value={{($dados->cond) == "1"? 'selected':''}}>{{$dados->textoCond}}</option>
+           <option value={{($dados->cond) == "2"? 'selected':''}}>Condômino</option>
+           <option value={{($dados->cond) == "3"? 'selected':''}}>Arrendatário</option>
+           <option value={{($dados->cond) == "4"? 'selected':''}}>Usufrutuário</option>
+           <option value={{($dados->cond) == "5"? 'selected':''}}>Parceiro</option>
+           <option value={{($dados->cond) == "6"? 'selected':''}}>Comodatário</option>
+           <option value={{($dados->cond) == "7"? 'selected':''}}>Pescador</option>
+           <option value={{($dados->cond) == "8"? 'selected':''}}>Posseiro</option>
+           <option value={{($dados->cond) == "9"? 'selected':''}}>NV Proprietário</option>
+           <option value={{($dados->cond) == "10"? 'selected':''}}>Mutuário</option>
+           <option value={{($dados->cond) == "11"? 'selected':''}}>Quilombola</option>
+           <option value={{($dados->cond) == "12"? 'selected':''}}>Co-proprietário</option>
+        </select>
       </div>
     </div>
 
     <div class="row">
 	  <div class="form-group col-md-6" >
-        <label >Insc. Estadual: </label> {{$dados->inscEstadual}}
+        <label >Insc. Estadual: </label>
+        <input class="form-control"  name="inscEstadual" value="{{$dados->inscEstadual}}"/>
       </div>
       <div class="form-group col-md-6" >
-        <label >CPF: </label>{{$dados->cpf}}
+        <label >CPF: </label>
+        <input class="form-control"  name="cpf" value="{{$dados->cpf}}"/>
       </div>
     </div>
     <div class="form-group" >
-      <label >Endereço: </label> {{$dados->endereco}}
+      <label >Endereço: </label>
+      <input class="form-control"  name="endereco" value="{{$dados->endereco}}"/>
     </div>
     <div class="row">
 	  <div class="form-group col-md-6" >
-        <label >Nº INCRA: </label> {{$dados->nIncra}}
+        <label >Nº INCRA: </label>
+        <input class="form-control"  name="nINCRA" value="{{$dados->nINCRA}}"/>
       </div>
       <div class="form-group col-md-6" >
-        <label >Venc. Contrato: </label> {{$dados->vencContrato}}
+        <label >Venc. Contrato: </label>
+        <input class="form-control"  name="vencContrato" value="{{$dados->vencContrato}}"/>
       </div>
     </div>
 
     <div class="row">
 	  <div class="form-group col-md-6" >
-        <label >NIRF: </label> {{$dados->nirf}}
+        <label >NIRF: </label>
+        <input class="form-control"  name="nirf" value="{{$dados->nirf}}"/>
       </div>
       <div class="form-group col-md-6" >
-        <label >Telefone: </label> {{$dados->telefone}}
+        <label >Telefone: </label>
+        <input class="form-control"  name="telefone" value="{{$dados->telefone}}"/>
       </div>
     </div>
     <div class="form-group" >
-      <label >Ponto Ref.: </label> {{$dados->pontoReferencia}}
+      <label >Ponto Ref.: </label>
+      <input class="form-control"  name="pontoReferencia" value="{{$dados->pontoReferencia}}"/>
     </div>
     <div class="form-group" >
-      <label >Notas Entregue: </label> {{$dados->notasEntregue}}
+      <label >Notas Entregue: </label>
+      <input class="form-control"  name="notasEntregue" value="{{$dados->notasEntregue}}"/>
     </div>
  
     <!-- <div class="form-group">
@@ -107,10 +127,7 @@
         </tfoot>
       </table>
     </div> -->
-
-  @endif
-
-
-
+    <button class="btn btn-primary">Atualizar</button>
+  </form>
 </div>
 @endsection

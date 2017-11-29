@@ -4,6 +4,9 @@
 
 	<h1 class="title"> 
 		Nova Ficha Produtor Rural
+    <a class="add" href="{{ URL::previous() }}" >
+        <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
+    </a>
 	</h1>
     <form method="post" action="addFichaPR">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />

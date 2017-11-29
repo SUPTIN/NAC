@@ -164,4 +164,37 @@ class HomeController extends Controller
         return  view ('fichaPRDetalhes', array('dados' => $dados));
     }
 
+    public function atualizaFichaPR (Request $request){
+        $id = $request->id;
+        $dados = FichaPR::find($id);
+        $nCond = $dados->cond;
+        switch($nCond){
+           case 1: $textoCond = "Proprietário";
+                    break;
+           case 2: $textoCond = "Condômino";
+                    break;
+           case 3: $textoCond = "Arrendatário";
+                    break;
+           case 4: $textoCond = "Usufrutuário";
+                    break;
+           case 5: $textoCond = "Parceiro";
+                    break;
+           case 6: $textoCond = "Comodatário";
+                    break;
+           case 7: $textoCond = "Pescador";
+                    break;
+           case 8: $textoCond = "Posseiro";
+                    break;
+           case 9: $textoCond = "NV Proprietário";
+                    break;
+           case 10: $textoCond = "Mutuário";
+                    break;
+           case 11: $textoCond = "Quilombola";
+                    break;
+           case 12: $textoCond = "Co-proprietário";
+                    break;
+        }
+        $dados["textoCond"] = $textoCond;
+        return view('formEditFichaPR', array('dados' => $dados));
+    }
 }
