@@ -3,7 +3,7 @@
 <div class="container">
 	<h1 class="title"> 
 		Detalhes Ficha Produtor Rural 
-    <a class="add" href="{{ URL::previous() }}" >
+    <a class="add" href="{{url('fichaProdRural')}}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
 	</h1> 
@@ -26,7 +26,7 @@
     </div>
     <div class="row">
 	  <div class="form-group col-md-8" >
-        <label >Contribuinte: </label>{{$dados->contribuinte}}
+        <label >Contribuinte: </label> {{$dados->contribuinte}}
       </div>
       <div class="form-group col-md-4" >
         <label >Cond: </label> {{$dados->textoCond}}
@@ -68,7 +68,28 @@
     <div class="form-group" >
       <label >Notas Entregue: </label> {{$dados->notasEntregue}}
     </div>
- 
+    <div class="form-group" >
+      <h3 class="title"> 
+        Blocos do Produtor
+        <a class="add" href="formAddBlocos" >
+          <i class="fa fa-plus-circle" aria-hidden="true" title="Adicionar novo Bloco ao Produtor"></i>
+        </a>
+      </h3>
+    </div>
+    <table class="table table-hover">
+        <tr>
+           <th>Data</th>
+           <th>Numeração</th>
+           <th>Quant.</th>
+           <th>Aut. Nº</th>
+           <th class="actions">Ação</th>
+        </tr>
+    </table>
+
+
+
+
+
     <!-- <div class="form-group">
        <label >Referências das notas: </label>
       <table id="products-table" class="table table-hover table-bordered">

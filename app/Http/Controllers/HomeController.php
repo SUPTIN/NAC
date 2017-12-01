@@ -197,4 +197,21 @@ class HomeController extends Controller
         $dados["textoCond"] = $textoCond;
         return view('formEditFichaPR', array('dados' => $dados));
     }
+
+    public function  updateFichaPR (Request $request){
+      $id = $request->id;
+      $dados = FichaPR::find($id);
+      //return  $request->ativo;
+      //$dados["ativo"] = $ativo;
+      if ($dados && $dados->exists){
+        $parametros = $request->all();
+        $dados->fill($parametros)->save();
+      }
+      //return $request;
+      //$this->fichaPR->fill($request)->save();
+      $caminho = $id . '/view';
+      
+      return redirect()->to($caminho);
+    }
+  
 }

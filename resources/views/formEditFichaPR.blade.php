@@ -3,21 +3,27 @@
 <div class="container">
 
 	<h1 class="title"> 
-		Nova Ficha Produtor Rural
+		Atualizar Ficha Produtor Rural
     <a class="add" href="{{ URL::previous() }}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
 	</h1>
-    <form method="post" action="updateFichaPR">
+    <form method="post" action="updateFPR">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     <input type="hidden" name="id" value="{{ $dados->id }}" />
     <div class="row">
         <div class="form-group col-md-8" >
-            <label >Ativo:  </label>
-            @if ($dados->ativo == 'sim')   
-               <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i>
-            @else  
-               <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i>            
+            
+            @if ($dados->ativo == 'sim')
+               <label >Desativar?  </label>
+               <input  class="form-check-input" name="ativo" value="não" type="radio"/> Sim
+               <input  class="form-check-input" name="ativo" value="sim" type="radio" checked="checked"/> Não   
+               <!-- <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i> -->
+            @else
+               <label >Ativa?  </label>
+               <input  class="form-check-input" name="ativo" value="sim" type="radio" /> Sim
+               <input  class="form-check-input" name="ativo" value="não" type="radio" checked="checked"/> Não    
+               <!-- <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i> -->          
             @endif
         </div>
     </div>
@@ -29,18 +35,18 @@
       <div class="form-group col-md-4" >
         <label >Cond: </label>
         <select class="form-control"  name="cond">
-           <option value={{($dados->cond) == "1"? 'selected':''}}>{{$dados->textoCond}}</option>
-           <option value={{($dados->cond) == "2"? 'selected':''}}>Condômino</option>
-           <option value={{($dados->cond) == "3"? 'selected':''}}>Arrendatário</option>
-           <option value={{($dados->cond) == "4"? 'selected':''}}>Usufrutuário</option>
-           <option value={{($dados->cond) == "5"? 'selected':''}}>Parceiro</option>
-           <option value={{($dados->cond) == "6"? 'selected':''}}>Comodatário</option>
-           <option value={{($dados->cond) == "7"? 'selected':''}}>Pescador</option>
-           <option value={{($dados->cond) == "8"? 'selected':''}}>Posseiro</option>
-           <option value={{($dados->cond) == "9"? 'selected':''}}>NV Proprietário</option>
-           <option value={{($dados->cond) == "10"? 'selected':''}}>Mutuário</option>
-           <option value={{($dados->cond) == "11"? 'selected':''}}>Quilombola</option>
-           <option value={{($dados->cond) == "12"? 'selected':''}}>Co-proprietário</option>
+           <option value="1" {{($dados->cond) == "1"? 'selected':''}}>{{$dados->textoCond}}</option>
+           <option value="2" {{($dados->cond) == "2"? 'selected':''}}>Condômino</option>
+           <option value="3" {{($dados->cond) == "3"? 'selected':''}}>Arrendatário</option>
+           <option value="4" {{($dados->cond) == "4"? 'selected':''}}>Usufrutuário</option>
+           <option value="5" {{($dados->cond) == "5"? 'selected':''}}>Parceiro</option>
+           <option value="6" {{($dados->cond) == "6"? 'selected':''}}>Comodatário</option>
+           <option value="7" {{($dados->cond) == "7"? 'selected':''}}>Pescador</option>
+           <option value="8" {{($dados->cond) == "8"? 'selected':''}}>Posseiro</option>
+           <option value="9" {{($dados->cond) == "9"? 'selected':''}}>NV Proprietário</option>
+           <option value="10" {{($dados->cond) == "10"? 'selected':''}}>Mutuário</option>
+           <option value="11" {{($dados->cond) == "11"? 'selected':''}}>Quilombola</option>
+           <option value="12" {{($dados->cond) == "12"? 'selected':''}}>Co-proprietário</option>
         </select>
       </div>
     </div>
@@ -62,7 +68,7 @@
     <div class="row">
 	  <div class="form-group col-md-6" >
         <label >Nº INCRA: </label>
-        <input class="form-control"  name="nINCRA" value="{{$dados->nINCRA}}"/>
+        <input class="form-control"  name="nINCRA" value="{{$dados->nIncra}}"/>
       </div>
       <div class="form-group col-md-6" >
         <label >Venc. Contrato: </label>
