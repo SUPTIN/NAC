@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\fichaPR;
+use App\blocoPR;
 use Gate;
 use App\Http\Controllers\Controller;
 
@@ -12,10 +13,12 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     private $fichaPR;
+    private $blocoPR;
     private $totalPage = 5;
 
-    public function __construct(fichaPR $fichaPR){
-    	$this->fichaPR =$fichaPR;
+    public function __construct(fichaPR $fichaPR, blocoPR $blocoPR){
+    	$this->fichaPR = $fichaPR;
+      $this->blocoPR = $blocoPR;
 
     }
     public function listaFuncionario(){
@@ -75,13 +78,11 @@ class HomeController extends Controller
         $insert= $this->fichaPR->create($dados);
         $id = $insert->id;
 
-
         if ($insert)
             return HomeController::cadFichaPR($id);
             //return redirect('viewCadFichaPR')->withId($id);
         else
             return redirect()->back();
-        
     }
 
     public function buscaFichaPR(Request $request){
@@ -216,8 +217,22 @@ class HomeController extends Controller
 
     public function  viewFormBlocos(Request $request){
       $id = $request->id;
-
-      
       return view('formAddBlocos')->with('id',$id);
+    }
+
+    public function  addBlocosPR(Request $request){
+      $dados = $request->except('_token');
+      $idProdutor = $request->id;
+      $dados["idProdutor"] = $idProdutor;
+
+      $insert= $this->blocoPR->create($dados);
+      $id = $insert->id;
+
+        if ($insert){
+          $caminho = $idProdutor . '/view';
+          return redirect()->to($caminho);
+        }  
+        else
+          return redirect()->back();
     }
 }
