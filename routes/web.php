@@ -22,6 +22,7 @@ Route::post('addFichaPR','HomeController@addFicha');
 Route::post('pesquisando','HomeController@buscaFichaPR');
 Route::get('{id}/edit','HomeController@atualizaFichaPR');
 Route::post('{id}/updateFPR','HomeController@updateFichaPR');
+Route::get('{id}/formAddBlocos','HomeController@viewFormBlocos');
 
 //Route::get('fichaPRCadSucesso/{id}', 'HomeController@cadFichaPR');
 /*Route::post('cadastroFichaPR', 'HomeController@cadastroFichaPR');*/

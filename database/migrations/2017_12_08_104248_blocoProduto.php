@@ -20,7 +20,7 @@ class BlocoProduto extends Migration
             $table->string('date');
             $table->string('autN');
             $table->integer('idProdutor')->unsigned();
-            $table->foreign('idProdutor')->references('id')->on('ficha_p_rs');
+            $table->foreign('idProdutor')->references('id')->on('ficha_p_rs')->onDelete('cascade');
             $table->timestamps();
         });
     }

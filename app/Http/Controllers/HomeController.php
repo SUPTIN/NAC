@@ -213,5 +213,11 @@ class HomeController extends Controller
       
       return redirect()->to($caminho);
     }
-  
+
+    public function  viewFormBlocos(Request $request){
+      $id = $request->id;
+
+      
+      return view('formAddBlocos')->with('id',$id);
+    }
 }

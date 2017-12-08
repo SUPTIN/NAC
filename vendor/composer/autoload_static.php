@@ -291,6 +291,7 @@ class ComposerStaticInit9b4100c44d95f108dd18f4292482270a
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'App\\fichaPR' => __DIR__ . '/../..' . '/app/fichaPR.php',
+        'BlocoProduto' => __DIR__ . '/../..' . '/database/migrations/2017_12_08_104248_blocoProduto.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
