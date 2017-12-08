@@ -15,7 +15,7 @@ class FichaProdutorRuralTable extends Migration
     {
         Schema::create('ficha_p_rs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ativo')->default('não');
+            $table->string('ativo')->default('sim');
             $table->string('contribuinte')->index();
             $table->string('cond');
             $table->string('inscEstadual');
