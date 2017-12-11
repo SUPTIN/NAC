@@ -80,7 +80,7 @@ class HomeController extends Controller
 
         if ($insert)
             return HomeController::cadFichaPR($id);
-            //return redirect('viewCadFichaPR')->withId($id);
+
         else
             return redirect()->back();
     }

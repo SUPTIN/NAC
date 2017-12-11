@@ -3,6 +3,9 @@
 <div class="container">
 	<h1 class="title"> 
 		Produtor Rural cadastrado com sucesso
+    <a class="add" href="{{url('fichaProdRural')}}" >
+        <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
+    </a>
 	</h1> 
     <div class="row">
         <div class="form-group col-md-8" >
