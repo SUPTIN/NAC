@@ -26,7 +26,7 @@ class HomeController extends Controller
 
     }
     public function viewFichaPR(){
-    	$fichas = $this->fichaPR->paginate($this->totalPage);
+    	$fichas = $this->fichaPR->orderBy('contribuinte')->paginate($this->totalPage);
     	return view('fichaProduRural', compact('fichas'));
     }
 
