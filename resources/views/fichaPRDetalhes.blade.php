@@ -104,7 +104,7 @@
       </tr>
     @endforelse
     </table>
-
+    <div align="center">{!! $blocos->links() !!}</div>
   @endif
 
 

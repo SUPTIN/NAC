@@ -166,7 +166,7 @@ class HomeController extends Controller
         $blocos = BlocoPR::where(function($query) use($id){
             if($id)
                 $query->where('idProdutor', '=', $id);
-        })->get();
+        })->paginate(5);
         return  view ('fichaPRDetalhes', array('dados' => $dados),compact('blocos'));
     }
 
