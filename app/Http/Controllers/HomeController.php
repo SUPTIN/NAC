@@ -95,7 +95,7 @@ class HomeController extends Controller
         })->get();
         if (empty($dados[0])){
             $dados["id"] = "Não foi localizado Inscrição!";
-            return view ('fichaPRDetalhes')->with('dados',$dados["id"]);;
+            return view ('fichaPRDetalhes')->with('dados',$dados["id"]);
         }    
         else {    
             $nCond = $dados[0]->cond;
@@ -162,7 +162,12 @@ class HomeController extends Controller
                     break;
         }
         $dados["textoCond"] = $textoCond;
-        return  view ('fichaPRDetalhes', array('dados' => $dados));
+
+        $blocos = BlocoPR::where(function($query) use($id){
+            if($id)
+                $query->where('idProdutor', '=', $id);
+        })->get();
+        return  view ('fichaPRDetalhes', array('dados' => $dados),compact('blocos'));
     }
 
     public function atualizaFichaPR (Request $request){
@@ -202,14 +207,10 @@ class HomeController extends Controller
     public function  updateFichaPR (Request $request){
       $id = $request->id;
       $dados = FichaPR::find($id);
-      //return  $request->ativo;
-      //$dados["ativo"] = $ativo;
       if ($dados && $dados->exists){
         $parametros = $request->all();
         $dados->fill($parametros)->save();
       }
-      //return $request;
-      //$this->fichaPR->fill($request)->save();
       $caminho = $id . '/view';
       
       return redirect()->to($caminho);
