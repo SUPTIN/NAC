@@ -82,6 +82,7 @@ class HomeController extends Controller
     }
 
     public function buscaFichaPR(Request $request){
+        //$totalPage = $this->$totalPage;
         $dados = $request->except('_token');
         $tipoBusca = $request->input('tipoBusca');
 
@@ -128,8 +129,9 @@ class HomeController extends Controller
             $blocos = BlocoPR::where(function($query) use($id){
               if($id)
                 $query->where('idProdutor', '=', $id);
-            })->paginate(5);
-            return view ('fichaPRDetalhes', array('dados' => $dados[0]),compact('blocos'));
+            })->paginate($this->totalPage);
+            $caminho = $id.'/view';
+            return redirect()->to($caminho);
           }
         
         }else{
@@ -176,8 +178,9 @@ class HomeController extends Controller
             $blocos = BlocoPR::where(function($query) use($id){
               if($id)
                 $query->where('idProdutor', '=', $id);
-            })->paginate(5);
-            return view ('fichaPRDetalhes', array('dados' => $dados[0]),compact('blocos'));
+            })->paginate($this->totalPage);
+            $caminho = $id.'/view';
+            return redirect()->to($caminho);
         }
       }    
     }
@@ -217,7 +220,7 @@ class HomeController extends Controller
         $blocos = BlocoPR::where(function($query) use($id){
             if($id)
                 $query->where('idProdutor', '=', $id);
-        })->paginate(5);
+        })->paginate($this->totalPage);
         return  view ('fichaPRDetalhes', array('dados' => $dados),compact('blocos'));
     }
 
