@@ -31,13 +31,10 @@ class HomeController extends Controller
     }
 
     public function viewFormFichaPR(){
-    	//$fichas = $this->fichaPR->all();
     	return view('formAddFichaPR');
     }
 
     public function cadFichaPR($id){
-        //$id = $request->id;
-        //dd($id);
         $dados = FichaPR::find($id);
         $nCond = $dados->cond;
         switch($nCond){
@@ -67,7 +64,6 @@ class HomeController extends Controller
                     break;
         }
         $dados["textoCond"] = $textoCond;
-        #return view('fichaPRCadSucesso')->with('id',$id);
         return view ('fichaPRCadSucesso', array('dados' => $dados));
     }
 
@@ -87,17 +83,19 @@ class HomeController extends Controller
 
     public function buscaFichaPR(Request $request){
         $dados = $request->except('_token');
-        $inscricao = $request->input('pesquisar');
-        
-        $dados = FichaPR::where(function($query) use($inscricao){
-            if($inscricao)
+        $tipoBusca = $request->input('tipoBusca');
+
+        if ($tipoBusca == 'inscricao'){
+          $inscricao = $request->input('pesquisar');
+          $dados = FichaPR::where(function($query) use($inscricao){
+             if($inscricao)
                 $query->where('inscEstadual', '=', $inscricao);
-        })->get();
-        if (empty($dados[0])){
+          })->get();
+          if (empty($dados[0])){
             $dados["id"] = "Não foi localizado Inscrição!";
             return view ('fichaPRDetalhes')->with('dados',$dados["id"]);
-        }    
-        else {    
+          }    
+          else {    
             $nCond = $dados[0]->cond;
             switch($nCond){
                 case 1: $textoCond = "Proprietário";
@@ -126,9 +124,62 @@ class HomeController extends Controller
                     break;
             }
             $dados[0]["textoCond"] = $textoCond;
-            return view ('fichaPRDetalhes')->with('dados',$dados[0]);
-       }
+            $id = $dados[0]["id"];
+            $blocos = BlocoPR::where(function($query) use($id){
+              if($id)
+                $query->where('idProdutor', '=', $id);
+            })->paginate(5);
+            return view ('fichaPRDetalhes', array('dados' => $dados[0]),compact('blocos'));
+          }
         
+        }else{
+          //pode melhorar campos de pesquisa nome unico $contribuinte $inscricao
+          $contribuinte = $request->input('pesquisar');
+          $dados = FichaPR::where(function($query) use($contribuinte){
+             if($contribuinte)
+                $query->where('contribuinte', '=', $contribuinte);
+          })->get();
+          if (empty($dados[0])){
+            $dados["id"] = "Não foi localizado Inscrição!";
+            return view ('fichaPRDetalhes')->with('dados',$dados["id"]);
+          }    
+          else {    
+            $nCond = $dados[0]->cond;
+            switch($nCond){
+                case 1: $textoCond = "Proprietário";
+                    break;
+                case 2: $textoCond = "Condômino";
+                    break;
+                case 3: $textoCond = "Arrendatário";
+                    break;
+                case 4: $textoCond = "Usufrutuário";
+                    break;
+                case 5: $textoCond = "Parceiro";
+                    break;
+                case 6: $textoCond = "Comodatário";
+                    break;
+                case 7: $textoCond = "Pescador";
+                    break;
+                case 8: $textoCond = "Posseiro";
+                    break;
+                case 9: $textoCond = "NV Proprietário";
+                    break;
+                case 10: $textoCond = "Mutuário";
+                    break;
+                case 11: $textoCond = "Quilombola";
+                    break;
+                case 12: $textoCond = "Co-proprietário";
+                    break;
+            }
+            $dados[0]["textoCond"] = $textoCond;
+            $id = $dados[0]["id"];
+            $blocos = BlocoPR::where(function($query) use($id){
+              if($id)
+                $query->where('idProdutor', '=', $id);
+            })->paginate(5);
+            return view ('fichaPRDetalhes', array('dados' => $dados[0]),compact('blocos'));
+        }
+      }    
     }
 
     public function viewDetalhes (Request $request){
