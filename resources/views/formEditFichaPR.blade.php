@@ -47,6 +47,7 @@
            <option value="10" {{($dados->cond) == "10"? 'selected':''}}>Mutuário</option>
            <option value="11" {{($dados->cond) == "11"? 'selected':''}}>Quilombola</option>
            <option value="12" {{($dados->cond) == "12"? 'selected':''}}>Co-proprietário</option>
+           <option value="13" {{($dados->cond) == "13"? 'selected':''}}>Informação desconhecida</option>
         </select>
       </div>
     </div>

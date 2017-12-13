@@ -20,13 +20,13 @@ class FichaProdutorRuralTable extends Migration
             $table->string('cond')->default('');
             $table->string('inscEstadual');
             $table->string('cpf')->default('Dado desconhecido');
-            $table->longtext('endereco')->default('Dado desconhecido');
-            $table->string('nIncra')->default('Dado desconhecido');
+            $table->longtext('endereco');
+            $table->string('nINCRA')->default('Dado desconhecido');
             $table->string('vencContrato')->default('Dado desconhecido');
             $table->string('nirf')->default('Dado desconhecido');
             $table->string('telefone')->default('Dado desconhecido');
-            $table->longtext('pontoReferencia')->default('Dado desconhecido');
-            $table->longtext('notasEntregue')->default('Dado desconhecido');
+            $table->longtext('pontoReferencia');
+            $table->longtext('notasEntregue');
             $table->string('ultFuncFazerMudanca')->default('sem_funcionario');
             $table->timestamps();
         });

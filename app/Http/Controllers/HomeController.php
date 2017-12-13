@@ -62,6 +62,8 @@ class HomeController extends Controller
                     break;
            case 12: $textoCond = "Co-proprietário";
                     break;
+           case 13: $textoCond = "Informação desconhecida";
+                    break;
         }
         $dados["textoCond"] = $textoCond;
         return view ('fichaPRCadSucesso', array('dados' => $dados));
@@ -69,6 +71,36 @@ class HomeController extends Controller
 
     public function addFicha(Request $request){
         $dados = $request->except('_token');
+        $dados = $request->except('cond');
+        $dados = $request->except('cpf');
+        $dados = $request->except('endereco');
+        $dados = $request->except('nINCRA');
+        $dados = $request->except('vencContrato');
+        $dados = $request->except('nirf');
+        $dados = $request->except('telefone');
+        $dados = $request->except('pontoReferencia');
+        $dados = $request->except('notasEntregue');
+        //return $request->notasEntregue;
+        if (empty($request->notasEntregue))
+            $dados["notasEntregue"] = "Informação desconhecida";
+        if (empty($request->cond))
+            $dados["cond"] = "13";
+        if (empty($request->cpf))
+            $dados["cpf"] = "Informação desconhecida";
+        if (empty($request->endereco))
+            $dados["endereco"] = "Informação desconhecida";
+        if (empty($request->nINCRA))
+            $dados["nINCRA"] = "Informação desconhecida";
+        if (empty($request->vencContrato))
+            $dados["vencContrato"] = "Informação desconhecida";
+        if (empty($request->nirf))
+            $dados["nirf"] = "Informação desconhecida";
+        if (empty($request->telefone))
+            $dados["telefone"] = "Informação desconhecida";
+        if (empty($request->pontoReferencia))
+            $dados["pontoReferencia"] = "Informação desconhecida";
+
+
         $insert= $this->fichaPR->create($dados);
         $id = $insert->id;
 
@@ -134,6 +166,8 @@ class HomeController extends Controller
                     break;
                 case 12: $textoCond = "Co-proprietário";
                     break;
+                case 13: $textoCond = "Informação desconhecida";
+                    break;
             }
             $dados[0]["textoCond"] = $textoCond;
             $id = $dados[0]["id"];
@@ -181,6 +215,8 @@ class HomeController extends Controller
                     break;
            case 12: $textoCond = "Co-proprietário";
                     break;
+           case 13: $textoCond = "Informação desconhecida";
+                    break;
         }
         $dados["textoCond"] = $textoCond;
 
@@ -219,6 +255,8 @@ class HomeController extends Controller
            case 11: $textoCond = "Quilombola";
                     break;
            case 12: $textoCond = "Co-proprietário";
+                    break;
+           case 13: $textoCond = "Informação desconhecida";
                     break;
         }
         $dados["textoCond"] = $textoCond;

@@ -39,6 +39,7 @@
            <option value="10">Mutuário</option>
            <option value="11">Quilombola</option>
            <option value="12">Co-proprietário</option>
+           <option value="13">Informação desconhecida</option>
         </select>
       </div>
     </div>
