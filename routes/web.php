@@ -24,6 +24,8 @@ Route::get('{id}/edit','HomeController@atualizaFichaPR');
 Route::post('{id}/updateFPR','HomeController@updateFichaPR');
 Route::get('{id}/formAddBlocos','HomeController@viewFormBlocos');
 Route::post('{id}/addBlocosPR','HomeController@addBlocosPR');
+Route::get('{id}/editBloco','HomeController@atualizaBlocoPR');
+Route::post('{id}/updateBPR','HomeController@updateBlocoPR');
 Route::get('listagemBusca','HomeController@listagemBusca');
 
 //Route::get('fichaPRCadSucesso/{id}', 'HomeController@cadFichaPR');

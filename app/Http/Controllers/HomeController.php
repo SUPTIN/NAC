@@ -257,4 +257,23 @@ class HomeController extends Controller
         else
           return redirect()->back();
     }
+
+    public function  atualizaBlocoPR (Request $request){
+      $id = $request->id;
+      $dados = BlocoPR::find($id);
+      return view('formEditBlocoPR', array('dados' => $dados));
+    }
+
+    public function  updateBlocoPR (Request $request){
+      $id = $request->id;
+      $idProdutor = $request->idProdutor;
+      $dados = BlocoPR::find($id);
+      if ($dados && $dados->exists){
+        $parametros = $request->all();
+        $dados->fill($parametros)->save();
+      }
+      $caminho = $idProdutor . '/view';
+      
+      return redirect()->to($caminho);
+    }
 }

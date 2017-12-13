@@ -4,7 +4,7 @@
 
 	<h1 class="title"> 
 		Atualizar Ficha Produtor Rural
-    <a class="add" href="{{ URL::previous() }}" >
+    <a class="add" href="{{url('fichaProdRural')}}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
 	</h1>

@@ -8,6 +8,9 @@
 		<a class="add" href="formAddFichaPR" >
 		    <i class="fa fa-plus-circle" aria-hidden="true" title="Adicionar nova Ficha"></i>
 		</a>
+		<a class="add" href="{{url('fichaProdRural')}}" >
+        <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
+    </a>
 	</h1>
 
 	<table class="table table-hover">
