@@ -8,4 +8,10 @@ class fichaPR extends Model
 {
     protected $table = 'ficha_p_rs';
     protected $fillable = ['contribuinte',  'ativo', 'cond', 'inscEstadual', 'cpf', 'endereco', 'nINCRA', 'vencContrato', 'nirf', 'telefone', 'pontoReferencia', 'notasEntregue'];
+
+    public $rules = ['contribuinte' => 'required|min:3|max:191',
+                     'inscEstadual' => 'required',];
+
+    public $messages = ['contribuinte.required' => 'O campo Contribuinte é de preenchimento obrigatório!',
+                     'inscEstadual.required' => 'O Campo Insc. Estadual é de preenchimento obrigatório!'];
 }

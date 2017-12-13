@@ -100,6 +100,7 @@ class HomeController extends Controller
         if (empty($request->pontoReferencia))
             $dados["pontoReferencia"] = "Informação desconhecida";
 
+        $this->validate($request, $this->fichaPR->rules, $this->fichaPR->messages);
 
         $insert= $this->fichaPR->create($dados);
         $id = $insert->id;

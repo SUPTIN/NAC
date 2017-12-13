@@ -4,10 +4,20 @@
 
 	<h1 class="title"> 
 		Nova Ficha Produtor Rural
-    <a class="add" href="{{ URL::previous() }}" >
-        <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
-    </a>
+    <a class="add" href="{{url('fichaProdRural')}}" >
+           <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
+        </a>
 	</h1>
+  @if (isset($errors) && count($errors) > 0)
+     <div class="alert alert-danger">
+       @foreach ($errors->all() as $error)
+          <ul>
+            <li>{{ $error }}</li>
+          </ul>
+       @endforeach
+     </div>
+  @endif
+
     <form method="post" action="addFichaPR">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     <div class="row">
