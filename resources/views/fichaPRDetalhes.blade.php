@@ -107,7 +107,5 @@
     <div align="center">{!! $blocos->links() !!}</div>
   @endif
 
-
-
 </div>
 @endsection

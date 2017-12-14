@@ -12,6 +12,6 @@ class fichaPR extends Model
     public $rules = ['contribuinte' => 'required|min:3|max:191',
                      'inscEstadual' => 'required',];
 
-    public $messages = ['contribuinte.required' => 'O campo Contribuinte é de preenchimento obrigatório!',
-                     'inscEstadual.required' => 'O Campo Insc. Estadual é de preenchimento obrigatório!'];
+    public $messages = ['contribuinte.required' => 'O campo CONTRIBUINTE é de preenchimento obrigatório!',
+                     'inscEstadual.required' => 'O Campo INSC. ESTADUAL é de preenchimento obrigatório!'];
 }

@@ -66,7 +66,15 @@ class HomeController extends Controller
                     break;
         }
         $dados["textoCond"] = $textoCond;
-        return view ('fichaPRCadSucesso', array('dados' => $dados));
+        $blocos = BlocoPR::where(function($query) use($id){
+              if($id)
+                $query->where('idProdutor', '=', $id);
+            })->paginate($this->totalPage);
+        $caminho = $id.'/view';
+            return redirect()->to($caminho);
+        //return view('fichaPRCadSucesso', 
+        //              array('dados' => $dados), 
+        //              array('blocos' => $blocos));
     }
 
     public function addFicha(Request $request){
@@ -267,6 +275,7 @@ class HomeController extends Controller
     public function  updateFichaPR (Request $request){
       $id = $request->id;
       $dados = FichaPR::find($id);
+      $this->validate($request, $this->fichaPR->rules, $this->fichaPR->messages);
       if ($dados && $dados->exists){
         $parametros = $request->all();
         $dados->fill($parametros)->save();
@@ -285,6 +294,8 @@ class HomeController extends Controller
       $dados = $request->except('_token');
       $idProdutor = $request->id;
       $dados["idProdutor"] = $idProdutor;
+
+      $this->validate($request, $this->blocoPR->rules, $this->blocoPR->messages);
 
       $insert= $this->blocoPR->create($dados);
       $id = $insert->id;
@@ -306,6 +317,7 @@ class HomeController extends Controller
     public function  updateBlocoPR (Request $request){
       $id = $request->id;
       $idProdutor = $request->idProdutor;
+      $this->validate($request, $this->blocoPR->rules, $this->blocoPR->messages);
       $dados = BlocoPR::find($id);
       if ($dados && $dados->exists){
         $parametros = $request->all();

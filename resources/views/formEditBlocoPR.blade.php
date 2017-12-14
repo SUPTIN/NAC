@@ -8,6 +8,16 @@
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
 	</h3>
+  @if (isset($errors) && count($errors) > 0)
+     <div class="alert alert-danger">
+       @foreach ($errors->all() as $error)
+          <ul>
+            <li>{{ $error }}</li>
+          </ul>
+       @endforeach
+     </div>
+  @endif
+
     <form method="post" action="updateBPR">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
      <input type="hidden" name="id" value="{{ $dados->id }}" />
