@@ -87,8 +87,8 @@ class HomeController extends Controller
         $dados = $request->except('nirf');
         $dados = $request->except('telefone');
         $dados = $request->except('pontoReferencia');
-        $dados = $request->except('notasEntregue');
-        //return $request->notasEntregue;
+        //$dados = $request->except('notasEntregue');
+        //return $dados;
         if (empty($request->notasEntregue))
             $dados["notasEntregue"] = "Informação desconhecida";
         if (empty($request->cond))
