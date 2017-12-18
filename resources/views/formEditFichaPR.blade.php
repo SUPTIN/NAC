@@ -79,7 +79,7 @@
     <div class="row">
 	  <div class="form-group col-md-6" >
         <label >Nº INCRA: </label>
-        <input class="form-control"  name="nINCRA" value="{{$dados->nIncra}}"/>
+        <input class="form-control"  name="nINCRA" value="{{$dados->nINCRA}}"/>
       </div>
       <div class="form-group col-md-6" >
         <label >Venc. Contrato: </label>
