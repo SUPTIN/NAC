@@ -81,12 +81,12 @@ class HomeController extends Controller
         $dados = $request->except('_token');
         $dados = $request->except('cond');
         $dados = $request->except('cpf');
-        $dados = $request->except('endereco');
+        //$dados = $request->except('endereco');
         $dados = $request->except('nINCRA');
         $dados = $request->except('vencContrato');
         $dados = $request->except('nirf');
         $dados = $request->except('telefone');
-        $dados = $request->except('pontoReferencia');
+        //$dados = $request->except('pontoReferencia');
         //$dados = $request->except('notasEntregue');
         //return $dados;
         if (empty($request->notasEntregue))
