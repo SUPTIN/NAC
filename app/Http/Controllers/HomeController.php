@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     private $fichaPR;
     private $blocoPR;
-    private $totalPage = 5;
+    private $totalPage = 20;
 
     public function __construct(fichaPR $fichaPR, blocoPR $blocoPR){
     	$this->fichaPR = $fichaPR;
