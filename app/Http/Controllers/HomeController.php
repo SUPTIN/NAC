@@ -79,13 +79,13 @@ class HomeController extends Controller
 
     public function addFicha(Request $request){
         $dados = $request->except('_token');
-        $dados = $request->except('cond');
-        $dados = $request->except('cpf');
+        //$dados = $request->except('cond');
+        //$dados = $request->except('cpf');
         //$dados = $request->except('endereco');
-        $dados = $request->except('nINCRA');
-        $dados = $request->except('vencContrato');
-        $dados = $request->except('nirf');
-        $dados = $request->except('telefone');
+        //$dados = $request->except('nINCRA');
+        //$dados = $request->except('vencContrato');
+        //$dados = $request->except('nirf');
+        //$dados = $request->except('telefone');
         //$dados = $request->except('pontoReferencia');
         //$dados = $request->except('notasEntregue');
         //return $dados;
@@ -103,6 +103,7 @@ class HomeController extends Controller
             $dados["vencContrato"] = "Informação desconhecida";
         if (empty($request->nirf))
             $dados["nirf"] = "Informação desconhecida";
+        //return $dados->telefone;
         if (empty($request->telefone))
             $dados["telefone"] = "Informação desconhecida";
         if (empty($request->pontoReferencia))
