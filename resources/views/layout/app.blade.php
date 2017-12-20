@@ -82,7 +82,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
-                            <li><a href="{{ url('/') }}">Principal</a></li>
+                            <li><a href="{{url('fichaProdRural')}}">Principal</a></li>
                             </li>
                     </ul>
                 </div>
