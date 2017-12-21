@@ -25,7 +25,7 @@
 
                       <div class="col-sm-5 col-md-3">
                         <div class="thumbnail">
-                          <a href="{{url('#')}}">
+                          <a href="{{url('dadosEstatisticos')}}">
                             <img src="icones/estatistica.png" alt="Dados estatísticos"/>
                             <div class="caption">
                               <h4>Dados Estatísticos</h4>

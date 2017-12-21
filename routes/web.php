@@ -28,6 +28,8 @@ Route::get('{id}/editBloco','HomeController@atualizaBlocoPR');
 Route::post('{id}/updateBPR','HomeController@updateBlocoPR');
 Route::get('listagemBusca','HomeController@listagemBusca');
 
+Route::get('dadosEstatisticos','HomeController@estatisticas');
+
 //Route::get('fichaPRCadSucesso/{id}', 'HomeController@cadFichaPR');
 /*Route::post('cadastroFichaPR', 'HomeController@cadastroFichaPR');*/
 

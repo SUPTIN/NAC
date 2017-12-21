@@ -317,4 +317,9 @@ class HomeController extends Controller
       
       return redirect()->to($caminho);
     }
+
+
+    public function  estatisticas (){      
+      return view('dadosEstatistica');
+    }
 }
