@@ -17,7 +17,7 @@
                           <a href="{{url('fichaProdRural')}}">
                             <img src="icones/FPR-icon.png" alt="Ficha Produtor Rural"/>
                             <div class="caption">
-                              <h4>Ficha Produtor Rural</h4>
+                              <h4 align="center">Ficha Produtor Rural</h4>
                             </div>
                         </a>
                        </div>
@@ -28,7 +28,7 @@
                           <a href="{{url('dadosEstatisticos')}}">
                             <img src="icones/estatistica.png" alt="Dados estatísticos"/>
                             <div class="caption">
-                              <h4>Dados Estatísticos</h4>
+                              <h4 align="center">Dados Estatísticos</h4>
                             </div>
                         </a>
                        </div>
@@ -39,7 +39,7 @@
                           <a href="{{url('#')}}">
                             <img src="icones/Info-icon.png" alt="icone de usuário"/>
                             <div class="caption">
-                              <h4>Informações do Sistema</h4>
+                              <h4 align="center">Informações do Sistema</h4>
                             </div>
                         </a>
                        </div>
