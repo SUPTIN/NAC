@@ -6,9 +6,11 @@
     <a class="add" href="{{url('fichaProdRural')}}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
-    <a href="{{url("$dados->id/edit")}}" class="edit">
+    @if ($dados !=  'Não foi localizado Inscrição!')
+        <a href="{{url("$dados->id/edit")}}" class="edit">
           <i class="fa fa-pencil-square-o" title="Edita a Ficha"></i>
         </a>
+    @endif
 	</h1> 
   @if ($dados ==  'Não foi localizado Inscrição!')
     <div class="row">
