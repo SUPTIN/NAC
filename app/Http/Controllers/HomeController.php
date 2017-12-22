@@ -21,6 +21,9 @@ class HomeController extends Controller
       $this->blocoPR = $blocoPR;
 
     }
+    public function  informacao (){ 
+      return view('informacao');
+    }
     public function listaFuncionario(){
     	return"funcionarios";
 

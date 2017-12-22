@@ -15,6 +15,8 @@
 	Route::get('fichaProdRural','FPR\fprController@index');
 });*/
 
+Route::get('informacaoSistema', 'HomeController@informacao');
+
 Route::get('fichaProdRural', 'HomeController@viewFichaPR');
 Route::get('formAddFichaPR', 'HomeController@viewFormFichaPR');
 Route::get('{id}/view', 'HomeController@viewDetalhes');

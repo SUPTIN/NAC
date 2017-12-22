@@ -36,7 +36,7 @@
 
                       <div class="col-sm-5 col-md-3">
                         <div class="thumbnail">
-                          <a href="{{url('#')}}">
+                          <a href="{{url('informacaoSistema')}}">
                             <img src="icones/Info-icon.png" alt="icone de usuário"/>
                             <div class="caption">
                               <h4 align="center">Informações do Sistema</h4>
