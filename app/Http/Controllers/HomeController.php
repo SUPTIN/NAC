@@ -319,7 +319,50 @@ class HomeController extends Controller
     }
 
 
-    public function  estatisticas (){      
-      return view('dadosEstatistica');
+    public function  estatisticas (){ 
+      $totalFichaPR = 0;
+      for ($i = 1; $i <= 13; $i++){
+        $contador = FichaPR::where(function($query) use($i){
+             if($i)
+                $query->where('cond', '=', $i);
+          })->count();
+
+        $totalFichaPR = $totalFichaPR + $contador;
+
+        switch($i){
+           case 1: $dados["Proprietário"] = $contador;
+                    break;
+           case 2: $dados["Condômino"]= $contador;
+                    break;
+           case 3: $dados["Arrendatário"] = $contador;
+                    break;
+           case 4: $dados["Usufrutuário"] = $contador;
+                    break;
+           case 5: $dados["Parceiro"] = $contador;
+                    break;
+           case 6: $dados["Comodatário"] = $contador;
+                    break;
+           case 7: $dados["Pescador"] = $contador;
+                    break;
+           case 8: $dados["Posseiro"] = $contador;
+                    break;
+           case 9: $dados["NV Proprietário"] = $contador;
+                    break;
+           case 10: $dados["Mutuário"] = $contador;
+                    break;
+           case 11: $dados["Quilombola"] = $contador;
+                    break;
+           case 12: $dados["Co-proprietário"] = $contador;
+                    break;
+           case 13: $dados["Informação desconhecida"] = $contador;
+                    break;
+        }
+
+      }
+      $dados["totalFichaPR"] = $totalFichaPR;
+      //return $dados["Informação desconhecida"];
+      //return $dados;
+      //$dados = 0;
+      return view('dadosEstatistica', compact('dados'));
     }
 }
