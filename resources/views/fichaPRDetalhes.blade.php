@@ -1,8 +1,8 @@
 @extends('layout.app')
 @section('content')
 <div class="container">
-	<h1 class="title"> 
-		Detalhes Ficha Produtor Rural 
+	<h1 class="title">
+		   Detalhes Ficha Produtor Rural
     <a class="add" href="{{url('fichaProdRural')}}" >
         <i class="fa fa-backward" aria-hidden="true" title="Voltar página"></i>
     </a>
