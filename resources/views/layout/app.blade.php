@@ -94,7 +94,7 @@
     </div>
 
     <div class="panel-footer">
-        Desenvolvido pela SUPTIN - Superintência de informática
+        Desenvolvido pela SUPTIN - Superintendência de Informática
     </div>
 
     <!-- Scripts -->
