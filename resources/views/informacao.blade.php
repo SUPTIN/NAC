@@ -11,7 +11,7 @@
     <div class="col-sm-12">
      <p>Sistema para cadastro de Produtores Rurais Municipais afim de controlar bloco de Notas Ficais.</p>
 
-     <p> Versão: alfa - 0.6</p>
+     <p> Versão: alfa - 1.6</p>
      
     </div>
   </div>
