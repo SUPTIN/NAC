@@ -70,10 +70,37 @@
     <div class="col-sm-8">
       <table class="table table-hover">
          <tr>
-           <th ><center>Gráfico por Cond.</center></th>
-         </tr> 
-         <tr>
-            <td>Imagem Gŕafico</td>
+            <td>
+
+              <script class="code" type="text/javascript">
+                $(document).ready(function(){
+                  jQuery.jqplot.config.enablePlugins = true;
+                  plot7 = jQuery.jqplot('cond',
+                    [[['Proprietário',{{$dados['Proprietário']}}], 
+                      ['Condômino',{{$dados['Condômino']}}],
+                      ['Arrendatário',{{$dados['Arrendatário']}}],
+                      ['Usufrutuário',{{$dados['Usufrutuário']}}],
+                      ['Parceiro',{{$dados['Parceiro']}}],
+                      ['Comodatário',{{$dados['Comodatário']}}],
+                      ['Pescador',{{$dados['Pescador']}}],
+                      ['Posseiro',{{$dados['Posseiro']}}],
+                      ['Mutuário',{{$dados['Mutuário']}}],
+                      ['Quilombola',{{$dados['Quilombola']}}],
+                      ['Co-proprietário',{{$dados['Co-proprietário']}}],
+                      ['Informação desconhecida',{{$dados['Informação desconhecida']}}]]],
+                    {
+                      title: 'Gráfico por Cond.',
+                      seriesDefaults: { shadow: true,
+                                        renderer: jQuery.jqplot.PieRenderer,
+                                        rendererOptions: { showDataLabels :true}
+                                      },
+                      legend: {show: true}
+                    }
+                    );
+                });                
+              </script>
+              <div id="cond" style="height:400px; width:600px;"></div>              
+            </td>
          </tr>
       </table>
     </div>
