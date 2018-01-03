@@ -20,7 +20,7 @@
     </div>
   @else
     <div class="row">
-        <div class="form-group col-md-8" >
+        <div class="form-group col-md-6" >
             <label >Ativo:  </label>
             @if ($dados->ativo == 'sim')   
                <i class="fa fa-thumbs-up" arian-hidden="true" title="Ativo SIM" style="color:green"></i>
@@ -28,6 +28,9 @@
                <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i>            
             @endif
         </div>
+        <div class="form-group col-md-6" >
+        <label >Identidade: </label> {{$dados->identidade}}
+      </div>
     </div>
     <div class="row">
 	  <div class="form-group col-md-8" >

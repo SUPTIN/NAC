@@ -22,7 +22,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
     <input type="hidden" name="id" value="{{ $dados->id }}" />
     <div class="row">
-        <div class="form-group col-md-8" >
+        <div class="form-group col-md-6" >
             
             @if ($dados->ativo == 'sim')
                <label >Desativar?  </label>
@@ -36,6 +36,10 @@
                <!-- <i class="fa fa-thumbs-down" arian-hidden="true" title="Ativo NÃO" style="color:red"></i> -->          
             @endif
         </div>
+        <div class="form-group col-md-6" >
+            <label >Identidade: </label>
+        <input class="form-control"  name="identidade" value="{{$dados->identidade}}"/>
+      </div>
     </div>
     <div class="row">
 	  <div class="form-group col-md-8" >
@@ -71,7 +75,7 @@
         <label >CPF: </label>
         <input class="form-control"  name="cpf" value="{{$dados->cpf}}"/>
       </div>
-    </div>
+
     <div class="form-group" >
       <label >Endereço: </label>
       <input class="form-control"  name="endereco" value="{{$dados->endereco}}"/>

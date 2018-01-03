@@ -27,6 +27,10 @@
           Ativo
         </label>
       </div>
+      <div class="form-group col-md-6" >
+        <label >Identidade: </label>
+        <input class="form-control"  name="identidade" value="{{old('identidade')}}"/>
+      </div>
     </div>
     <div class="row">
 	  <div class="form-group col-md-8" >

@@ -75,9 +75,6 @@ class HomeController extends Controller
             })->paginate($this->totalPage);
         $caminho = $id.'/view';
             return redirect()->to($caminho);
-        //return view('fichaPRCadSucesso', 
-        //              array('dados' => $dados), 
-        //              array('blocos' => $blocos));
     }
 
     public function addFicha(Request $request){
@@ -100,6 +97,8 @@ class HomeController extends Controller
             $dados["telefone"] = "Informação desconhecida";
         if (empty($request->pontoReferencia))
             $dados["pontoReferencia"] = "Informação desconhecida";
+        if (empty($request->identidade))
+            $dados["identidade"] = "Informação desconhecida";
 
         $this->validate($request, $this->fichaPR->rules, $this->fichaPR->messages);
 
